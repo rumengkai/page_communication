@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多页面通讯实践</title>
+  </head>
+  <style>
+    button {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 15px;
+      background-color: #cccccc;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      padding: 0;
+      border: 0;
+    }
+  </style>
+  <body>
+    <h1>页面二</h1>
+    <button onclick="setStorage()">set b</button>
+    <div class="content"></div>
+  </body>
+  <script>
+    window.onstorage = function (e) {
+      document
+        .querySelectorAll(".content")[0]
+        .insertAdjacentHTML("afterend", e.key + "=" + e.newValue + "<br/>");
+    };
+    function setStorage() {
+      b = localStorage.getItem("b") + 2;
+      localStorage.setItem("b", b);
+    }
+  </script>
+</html>
