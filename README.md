@@ -2,7 +2,7 @@
 
 html 多页面通信：
 
-广播模式：Broadcast Channe / Service Worker / LocalStorage + StorageEvent
+广播模式：Broadcast Channe / window.postMessage/ Service Worker / LocalStorage + StorageEvent
 
 共享存储模式：Shared Worker / IndexedDB / cookie
 
